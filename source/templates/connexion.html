@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title > Covoit' Marchal</title>
+        <link rel="icon" href="../static/image/logo.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF_8;width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" media="screen" type="text/css" title="Covoit Marchal" href="../static/Style_glb.css" \>
+    </head>
+    <body>
+    <div id="bandeau">
+        <img src="../static/image/logo.png">
+        <a href="/"><h1>Covoit'Marchal</h1></a>
+        </div>
+        <form action="#" method="post" class="form">  
+            <div class="input-container">
+                {%if log==False%}
+                <p id="log">*Identifiant ou mot de passe incorrect*</p>
+                {%endif%}
+                <input type="text" name="username" id="identifiant" placeholder="Identifiant : "required/> 
+            <span>
+            </span>
+            
+                <input type="password"name="password" id="password" placeholder="Mot de passe :" required/>
+            </div>
+                <button type="submit"  class="connexion">Connexion</button>
+        </form>
+        <p>Tu n'as pas de compte ? <a href="/inscription">|Inscris toi| </a></p>
+    </body>
+</html>

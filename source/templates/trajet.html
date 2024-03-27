@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title > Covoit' Marchal</title>
+        <link rel="icon" href="../static/image/logo.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF_8;width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" media="screen" type="text/css" title="Covoit Marchal" href="../static/Style_glb.css" \>
+    </head>
+    <body>
+    <div id="bandeau">
+        <div id="menu">
+        <ul class="menu">
+            <li><a href="#"><h2>Menu</h2></a>
+                <ul class="menu-dropdown">
+                    <li><a href="profil">Profil</a></li>
+                    <li><a href="/logout">Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+        <img src="../static/image/logo.png">
+        <a href="/"><h1>Covoit'Marchal</h1></a>
+
+    </div>
+
+
+        <div id = "carte">
+            {{ iframe|safe }}
+        </div>
+
+        <a href="https://www.google.com/maps/dir/{{coord_fin[0]}},{{coord_fin[1]}}/{{coord_milieu[0]}},{{coord_milieu[1]}}/{{coord_debut[0]}},{{coord_debut[1]}}/"><p>Voir sur google maps</p></a>
+    <form class="c2" action="/enregistrer_trajet" method="POST">
+    <div class = "enregistrer">
+
+                <input type="hidden" name="id_passager" value={{id_passager}}> 
+                <input type="hidden" name="id_conducteur" value={{id_conducteur}}>
+                <input type="hidden" name="horaire" value="{{horaire}}">
+
+                <button type='submit' class='visu' >Enregistrer le trajet</button>
+        </form>
+
+    </div>
+
+    </body>
+</html>

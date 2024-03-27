@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title > Covoit' Marchal</title>
+        <link rel="icon" href="../static/image/logo.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF_8;width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" media="screen" type="text/css" title="Covoit Marchal" href="../static/style.css" \>
+    </head>
+    <body>
+    <div id="bandeau">
+        <div id="menu">
+        <ul class="menu">
+            <li><a href="#"><h2>Menu</h2></a>
+                <ul class="menu-dropdown">
+                    <li><a href="profil">Profil</a></li>
+                    <li><a href="/logout">Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+        <img src="../static/image/logo.png">
+        <a href="/"><h1>Covoit'Marchal</h1></a>
+    </div>
+            <table>
+            {% for item in items %}
+
+            <div class="main">
+                <tr>
+                    <td><p>Temps supplémentaire : {{item.tps_sup}} minutes</p></td>
+                    <td><p>Nom  et prénom du covoitureur : {{item.prenom}} {{item.nom}} </p> </td>
+                
+            {%if item.role == True%}
+                    <td><p>Vous êtes le conducteur</p></td>
+            {%else%}
+                    <td><p>Vous êtes le passager</p></td>
+
+            {%endif%}
+            
+               
+                <form class="c2" action="/trajet" method="post">
+                    <input type="hidden" name="passager" value="{{item.passager}}"> 
+                    <input type="hidden" name="conducteur" value="{{item.conducteur}}">
+                    <input type="hidden" name="horaire" value="{{horaire}}">
+                    <td><button type='submit' class='visu' >Visualiser le trajet</button></td>
+                </form>
+            </div>
+            </tr>
+            {% endfor %}
+
+            </table>  
+        
+    </body>
+</html>

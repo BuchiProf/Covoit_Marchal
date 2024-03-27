@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title > Covoit' Marchal</title>
+        <link rel="icon" href="../static/image/logo.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF_8;width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" media="screen" type="text/css" title="Covoit Marchal" href="../static/Style_glb.css"\>
+    </head>
+    <body> 
+    <div id="bandeau">
+        <div id="menu">
+        <ul class="menu">
+            <li><a href="#"><h2>Menu</h2></a>
+                <ul class="menu-dropdown">
+                    <li><a href="profil">Profil</a></li>
+                    <li><a href="/logout">Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+        <img src="../static/image/logo.png">
+        <a href="/"><h1>Covoit'Marchal</h1></a>
+    </div>
+    <div class="enregistre">
+        <h3>Vos trajets enregistrés </h3>
+    {%if trajets_confirmes%}
+    {% for item in trajets_confirmes %}
+                <p class="c1">
+                    Trajets enregistrés: avec {{item.prenom}} {{item.nom}} </br>    
+            </p>
+            
+                <form class="c2" action="/trajet_enregistre" method="post">
+                    <input type="hidden" name="id_trajet" value="{{item.id_trajet}}"> 
+                    <button type='submit' class='bouton' >Voir le trajet</button>
+                </form>
+
+        
+    {% endfor %}
+    {%else%}
+        <p>Aucun trajet encore enregistré</p>
+    {% endif %}
+    </div>
+    <div class="nonconf">
+        <h3>Vos trajets à confirmer</h3>
+    {%if trajets_non_confirmes%}
+        {% for item in trajets_non_confirmes %}
+                    <p class="c1">
+                        Trajets enregistrés: avec {{item.prenom}} {{item.nom}} </br>    
+                </p>
+                    <form class="c2" action="/trajet_enregistre" method="post">
+                        <input type="hidden" name="id_trajet" value="{{item.id_trajet}}"> 
+                        <button type='submit' class='bouton' >Voir le trajet</button>
+                    </form>
+            
+        {% endfor %}
+    {%else%}
+        <p>Aucun trajet confirmé</p>
+    {% endif %}
+    </div>
+        <form action="/resultat" method="post" class="bouton">
+        <select name="jour">
+        <option value="l">Lundi</option>
+        <option value="m">Mardi</option>
+        <option value="me">Mercredi</option>
+        <option value="j">Jeudi</option>
+        <option value="v">Vendredi</option>
+        </select>
+        <input type="radio" name="matin" value='matin' checked="checked">Matin</input>
+        <input type="radio" name="matin" value='soir'>Soir</input>
+        <button  type='submit'class="forme">Visualiser les trajets</button>   
+        </form>
+    </body>
+</html>

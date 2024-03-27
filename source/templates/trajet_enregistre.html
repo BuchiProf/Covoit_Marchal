@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title > Covoit' Marchal</title>
+        <link rel="icon" href="../static/image/logo.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF_8;width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" media="screen" type="text/css" title="Covoit Marchal" href="../static/Style_glb.css" \>
+    </head>
+    <body>
+    <div id="bandeau">
+        <div id="menu">
+            <ul class="menu">
+                <li><a href="#"><h2>Menu</h2></a>
+                    <ul class="menu-dropdown">
+                        <li><a href="profil">Profil</a></li>
+                        <li><a href="/logout">Déconnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <img src="../static/image/logo.png">
+        <a href="/"><h1>Covoit'Marchal</h1></a>
+    </div>
+        
+        <div id = "carte">
+            {{ iframe|safe }}
+        </div>
+        <a href="https://www.google.com/maps/dir/{{coord_fin[0]}},{{coord_fin[1]}}/{{coord_milieu[0]}},{{coord_milieu[1]}}/{{coord_debut[0]}},{{coord_debut[1]}}/"><p>Voir sur google maps</p></a>
+        {%if etat==0%}
+        <p> Le trajet est confirmé pour le {{infos.jour_semaine}} {{infos.jour}} {{infos.mois}} {{infos.annee}}, à {{infos.heure}}:{{infos.minutes}}</p>
+        {%elif etat==1%}
+        <p> Le trajet du {{infos.jour_semaine}} {{infos.jour}} {{infos.mois}} {{infos.annee}}, à {{infos.heure}}:{{infos.minutes}}</br>
+            est en attente de confirmation par {{infos.prenom}} {{infos.nom}}</p>
+        {%elif etat==2%}
+        <p>{{infos.prenom}} {{infos.nom}} vous propose un trajet pour le {{infos.jour_semaine}} {{infos.jour}} {{infos.mois}} {{infos.annee}}, à {{infos.heure}}:{{infos.minutes}}</p>
+        <form class="c2" action="/confirmer_trajet" method="post">
+            <input type="hidden" name="id_trajet" value="{{infos.id_trajet}}"> 
+            <button type='submit' class='visu' >Confirmer le trajet</button>
+        </form>
+        {%endif%}
+
+    </body>
+</html>

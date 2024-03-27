@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title > Covoit' Marchal</title>
+        <link rel="icon" href="../static/image/logo.ico" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF_8;width=device-width, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" media="screen" type="text/css" title="Covoit Marchal" href="../static/stylepro.css" \>
+    </head>
+    <body>
+    <div id="bandeau">
+        <div id="menu">
+        <ul class="menu">
+            <li><a href="#"><h2>Menu</h2></a>
+                <ul class="menu-dropdown">
+                    <li><a href="profil">Profil</a></li>
+                    <li><a href="/logout">Déconnexion</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+        <img src="../static/image/logo.png">
+        <a href="/"><h1>Covoit'Marchal</h1></a>
+    </div>
+
+        <form action="#" method="post" class="form">
+            <div class="input-container">
+                <p>Nom : {{nom}}</p>
+                <p>Prénom : {{prenom}}</p>
+                <p><input type="text" name="adress" id="adresse" value="{{adresse}}"/></p>
+                <p><input type="text" name="city" id="ville" value="{{ville}}"/></p>
+                <p><input type="number" name="code" id="cdpost" value="{{code_postal}}"/></p>
+            </div>
+                <table border='1'>
+                    <tr><td></td><td><p>Lundi</p></td><td><p>mardi</p></td><td><p>Mercredi</p></td><td><p>Jeudi</p></td><td><p>Vendredi</p></td></tr>
+                    <tr><td><p>Besoin d'être au lycée</br> le matin à </p></td><td><input type="time" name="l_m" value="{{horaires[0]}}" step="1800"/></td><td><input type="time" name="m_m" value="{{horaires[2]}}" step="1800"/></td><td><input type="time" name="me_m" value="{{horaires[4]}}" step="1800"/></td><td><input type="time" name="j_m" value="{{horaires[6]}}" step="1800"/></td><td><input type="time" name="v_m" value="{{horaires[8]}}" step="1800"/></td></tr>
+                    <tr><td><p>Départ du lycée</br> le soir à</p></td><td><input type="time" name="l_s" value="{{horaires[1]}}" step="1800"/></td><td><input type="time" name="m_s" value="{{horaires[3]}}" step="1800"/></td><td><input type="time" name="me_s" value="{{horaires[5]}}" step="1800"/></td><td><input type="time" name="j_s" value="{{horaires[7]}}" step="1800"/></td><td><input type="time" name="v_s" value="{{horaires[9]}}" step="1800"/></td></tr>
+                    
+                </table>
+                <button type="submit">Enregistrer</button>
+                
+                <a href="/logout"><h3>Déconnexion</h3></a>
+            
+        </form>
+        
+    </body>
+</html>
