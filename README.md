@@ -1,29 +1,31 @@
 Arborescence des fichiers :
 
 Source
-+--data
-   +--map.graphml
-+--static
-   +--image
-      +--logo.ico
-      +--logo.png
-   +--style.css
-   +--Style_glb.css
-   +--stylepro.css
-+--templates
-   +--accueil.html
-   +--connexion.html
-   +--inscription.html
-   +--profil.html
-   +--resultat.html
-   +--trajet.html
-   +--trajet_enregistre.html
-+--adresse.py
-+--bdd.py
-+--carte.py
-+--date_heure_trajet
-+--flask_app.py
-+--database.db
++--data   
+   +----map.graphml  
++--static  
+   +----image  
+      +------logo.ico  
+      +------logo.png  
+   +----style.css  
+   +----Style_glb.css  
+   +----stylepro.css  
++--templates  
+   +----accueil.html  
+   +----connexion.html  
+   +----inscription.html  
+   +----profil.html  
+   +----resultat.html  
+   +----trajet.html  
+   +----trajet_enregistre.html  
++--adresse.py  
++--bdd.py  
++--carte.py  
++--date_heure_trajet  
++--flask_app.py  
++--database.db  
+
+
 
 
 
